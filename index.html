@@ -1,4 +1,7 @@
 <html>
+  <title>Desktop Page Twitch</title>
+  <head>
+  </head>
   <body>
     <!-- Add a placeholder for the Twitch embed -->
     <div id="twitch-embed"></div>
@@ -13,6 +16,16 @@
         height: 480,
         channel: "zeneixi",
       });
+
+      embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
+        var player = embed.getPlayer();
+        player.play();
+      });
     </script>
+    <br><br>
+
+    <form id="button" target = "_blank" action="https://twitch.tv/login?popup=true">
+      <input type="submit" value="Login with twitch" />
+    </form>
   </body>
 </html>
